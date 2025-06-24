@@ -1,0 +1,87 @@
+body {
+    color: #181818;
+    background: #f7f7f7;
+    font-family: 'Lucida Sans Unicode', sans-serif;
+    font-size: 18px;
+}
+
+header {
+    position: relative;
+}
+
+.container {
+    margin: 5px auto;
+    width: 940px;
+}
+
+/* transformar imagem com um corte circular */
+.circular {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 5px;
+}
+
+.nav-menu {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.nav-menu ul li {
+    display: inline;
+    margin-left: 15px;
+}
+
+#luna img {
+    width: 250px;
+    height: 260px;
+}
+
+p {
+    text-indent: 15px;
+    padding: 0 45px 10px;
+}
+
+p:first-of-type {
+    padding: 30px 45px 10px;
+}
+
+h2 {
+    border-bottom: 2px solid #333;
+    margin-top: 30px;
+    width: 470px;
+}
+
+
+
+
+/* Dark Mode toggle - ainda a perceber como funciona*/
+#toggle {
+  display: none;
+}
+
+.btn-toggle {
+  cursor: pointer;
+  background: #ccc;
+  padding: 5px 10px;
+  border-radius: 4px;
+  user-select: none;
+}
+
+#toggle:checked + .btn-toggle {
+  background: #444;
+  color: white;
+}
+
+#toggle:checked ~ .content {
+  background: #0e0d0d;
+  color: #eee;
+}
+
+
+/* outline usado para verificar limites de todos os objectos */
+/* * {
+    outline: 1px solid red;
+} */
