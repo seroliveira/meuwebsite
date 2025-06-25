@@ -10,8 +10,8 @@ header {
     position: relative;
     height: 150px;
     background: url(../img/logo_db.png) no-repeat center left;
-    background-size: 500px 140px;
-    background-position: calc(0% + 100px) center;
+    background-size: 550px 140px;
+    background-position: calc(0% + 70px) center;
 }
 
 .container {
@@ -43,19 +43,54 @@ header {
     margin-left: 15px;
 }
 
+/* pagina index */
+.container .fourstarball {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes pulse-rotate-smooth {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+    100% {
+        transform: scale(1.1) rotate(360deg);
+    }
+}
+
+.fourstarball img {
+    width: 500px;
+    height: 500px;
+    object-fit: contain;
+    transition: transform 0.3s ease-in-out;
+}
+
+.fourstarball img:hover {
+    animation: pulse-rotate-smooth 2s linear infinite;
+}
+
+/* pagina sobre */
 #luna img {
     width: 250px;
     height: 260px;
-    margin-top: 25px;
+    margin-top: 30px;
+}
+
+figcaption {
+    text-align: center;
+}
+
+legend {
+    margin: 10px 10px;
 }
 
 p {
-    padding: 0 45px 10px;
+    padding: 10px 10px;
 }
 
 p:first-of-type {
-    text-indent: 10px;
-    padding: 30px 45px 10px;
+    padding-top: 30px;
 }
 
 h2 {
@@ -75,31 +110,108 @@ strong {
     text-align: center;
 }
 
+/* pagina goku */
 .goku {
+    position: relative;
+    text-align: center;
+}
+
+/* esconde os radios */
+.goku input {
+    display: none;
+}
+
+/* labels em linha */
+.goku label {
+    display: inline-block;
+    margin: 5px;
+    padding: 8 12px;
+    cursor: pointer;
+    background-color: #eee;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    transition: 0.2s;
+}
+
+/* estilo ao selecionar label */
+.goku input:checked + label {
+    background-color: #d0e7ff;
+    border-color: #007bff;
+}
+
+/* centrar imagens */
+.goku .imagem {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* esconde todas as imagens por padrão */
+.goku .imagem img {
+    display: none;
+    height: 700px;
+    object-fit: contain;
+    max-width: 300px;
+    margin-top: 20px;
+}
+
+/* mostra apenas a imagem correspondente ao radio selecionado */
+#base:checked ~ .imagem #img-base,
+#ss:checked ~ .imagem #img-ss,
+#ss2:checked ~ .imagem #img-ss2,
+#ss3:checked ~ .imagem #img-ss3,
+#ss4:checked ~ .imagem #img-ss4,
+#ssgod:checked ~ .imagem #img-ssgod,
+#ssgodblue:checked ~ .imagem #img-ssgodblue,
+#mui:checked ~ .imagem #img-mui {
+    display: block;
+}
+
+/* footer */
+footer p {
+    position: relative;
+    left: 0;
+    bottom: 0;
+}
+
+footer .container {
     position: relative;
 }
 
-.goku label img {
-    display: block;
-    max-width: 100%;
-}
-
-.goku label::after {
-    content: '';
-    display: block;
-    width: 100px;
-    height: 50px;
-    box-sizing: border-box;
+.social {
     position: absolute;
-    top: 15px;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
-/* .goku input[type="radio"] {
-    display: none;
-} */
+.social li {
+    float: left;
+    margin-left: 25px;
+}
 
-.goku input:not(checked) + label img {
-    display: none;
+.social a {
+    /* tamanho da imagem */
+    height: 32px;
+    width: 32px;
+
+    /* image replacement */
+    display: block;
+    text-indent: -9999px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.social a[href*="tiktok"] {
+    background-image: url(../img/tiktok.png);
+}
+
+.social a[href*="instagram"] {
+    background-image: url(../img/instagram.png);
+}
+
+.social a[href*="x.com"] {
+    background-image: url(../img/x.png);
 }
 
 /* outline usado para verificar limites de todos os objectos */
