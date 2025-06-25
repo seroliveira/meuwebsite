@@ -1,17 +1,23 @@
 body {
     color: #181818;
-    background: #f7f7f7;
+    background-color: #e7e1e1;
     font-family: 'Lucida Sans Unicode', sans-serif;
     font-size: 18px;
+    line-height: 1.1;
 }
 
 header {
     position: relative;
+    height: 150px;
+    background: url(../img/logo_db.png) no-repeat center left;
+    background-size: 500px 140px;
+    background-position: calc(0% + 100px) center;
 }
 
 .container {
-    margin: 5px auto;
+    margin: 0 auto;
     width: 940px;
+    overflow: hidden;
 }
 
 /* transformar imagem com um corte circular */
@@ -20,13 +26,16 @@ header {
     height: 100px;
     object-fit: cover;
     border-radius: 50%;
-    margin: 5px;
+    margin: 0;
+    position: absolute;
+    top: 5px;
+    right: 5px;
 }
 
 .nav-menu {
     position: absolute;
-    bottom: 0;
-    right: 0;
+    bottom: 5px;
+    right: 5px;
 }
 
 .nav-menu ul li {
@@ -37,14 +46,15 @@ header {
 #luna img {
     width: 250px;
     height: 260px;
+    margin-top: 25px;
 }
 
 p {
-    text-indent: 15px;
     padding: 0 45px 10px;
 }
 
 p:first-of-type {
+    text-indent: 10px;
     padding: 30px 45px 10px;
 }
 
@@ -52,34 +62,45 @@ h2 {
     border-bottom: 2px solid #333;
     margin-top: 30px;
     width: 470px;
+    font-weight: bold;
+    font-size: 20px;
 }
 
-
-
-
-/* Dark Mode toggle - ainda a perceber como funciona*/
-#toggle {
-  display: none;
+strong {
+    font-weight: bold;
 }
 
-.btn-toggle {
-  cursor: pointer;
-  background: #ccc;
-  padding: 5px 10px;
-  border-radius: 4px;
-  user-select: none;
+#luna {
+    float: right;
+    text-align: center;
 }
 
-#toggle:checked + .btn-toggle {
-  background: #444;
-  color: white;
+.goku {
+    position: relative;
 }
 
-#toggle:checked ~ .content {
-  background: #0e0d0d;
-  color: #eee;
+.goku label img {
+    display: block;
+    max-width: 100%;
 }
 
+.goku label::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 50px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 15px;
+}
+
+/* .goku input[type="radio"] {
+    display: none;
+} */
+
+.goku input:not(checked) + label img {
+    display: none;
+}
 
 /* outline usado para verificar limites de todos os objectos */
 /* * {

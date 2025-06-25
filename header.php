@@ -10,16 +10,14 @@
 <body>
     <!-- Conteúdo do header -->
     <header class="container">
-        <h1><img src="img/luna_e_eu.jpg" alt="Foto Luna e Eu" class="circular"></h1>
-
-        <label for="toggle" class="btn-toggle">Ativar modo escuro</label>
-        <input type="checkbox" id="toggle" />
+        <img src="img/luna_e_eu.jpg" alt="Foto Luna e Eu" class="circular">
         
         <nav class="nav-menu">
             <ul>
                 <li><a href="index.php">Início</a></li>
                 <li><a href="sobre.php">Sobre</a></li>
                 <li><a href="hobbies.php">Hobbies</a></li>
+                <li><a href="goku.php">Goku</a></li>
             </ul>
         </nav>
 
