@@ -2,7 +2,7 @@ body {
     color: #181818;
     background-color: #e7e1e1;
     font-family: 'Lucida Sans Unicode', sans-serif;
-    font-size: 18px;
+    font-size: 1.1em;
     line-height: 1.1;
 }
 
@@ -10,8 +10,8 @@ header {
     position: relative;
     height: 150px;
     background: url(../img/logo_db.png) no-repeat center left;
-    background-size: 550px 140px;
-    background-position: calc(0% + 70px) center;
+    background-size: 34em 8.5em;
+    background-position: calc(0% + 3em) center;
 }
 
 .container {
@@ -54,6 +54,7 @@ header {
     0% {
         transform: scale(1) rotate(0deg);
     }
+
     100% {
         transform: scale(1.1) rotate(360deg);
     }
@@ -134,7 +135,7 @@ strong {
 }
 
 /* estilo ao selecionar label */
-.goku input:checked + label {
+.goku input:checked+label {
     background-color: #d0e7ff;
     border-color: #007bff;
 }
@@ -149,21 +150,20 @@ strong {
 /* esconde todas as imagens por padrão */
 .goku .imagem img {
     display: none;
-    height: 700px;
+    height: 600px;
     object-fit: contain;
     max-width: 300px;
-    margin-top: 20px;
 }
 
 /* mostra apenas a imagem correspondente ao radio selecionado */
-#base:checked ~ .imagem #img-base,
-#ss:checked ~ .imagem #img-ss,
-#ss2:checked ~ .imagem #img-ss2,
-#ss3:checked ~ .imagem #img-ss3,
-#ss4:checked ~ .imagem #img-ss4,
-#ssgod:checked ~ .imagem #img-ssgod,
-#ssgodblue:checked ~ .imagem #img-ssgodblue,
-#mui:checked ~ .imagem #img-mui {
+#base:checked~.imagem #img-base,
+#ss:checked~.imagem #img-ss,
+#ss2:checked~.imagem #img-ss2,
+#ss3:checked~.imagem #img-ss3,
+#ss4:checked~.imagem #img-ss4,
+#ssgod:checked~.imagem #img-ssgod,
+#ssgodblue:checked~.imagem #img-ssgodblue,
+#mui:checked~.imagem #img-mui {
     display: block;
 }
 
@@ -214,7 +214,270 @@ footer .container {
     background-image: url(../img/x.png);
 }
 
+table {
+    margin: 20px auto;
+    border: 1px solid black;
+    border-spacing: 0.2em;
+    border-collapse: separate;
+}
+
+thead {
+    background-color: #999;
+}
+
+thead th {
+    font-weight: bold;
+    text-align: center;
+    padding: 0.3em 1em;
+}
+
+.piramide {
+    border: 0;
+}
+
+.piramide img {
+    width: 70px;
+    height: 70px;
+}
+
+.hobbies td:first-child {
+    background-color: #c2bfbf;
+}
+
 /* outline usado para verificar limites de todos os objectos */
 /* * {
     outline: 1px solid red;
 } */
+
+@media (min-width: 320px) and (max-width: 419px) {
+    .container {
+        width: 96%;
+        margin: 0 auto;
+        padding: 0;
+        font-size: 20px;
+    }
+
+    .circular {
+        display: none;
+    }
+
+    header {
+        position: relative;
+        height: 180px;
+        background: url(../img/logo_db.png) no-repeat;
+        background-size: 14em 5em;
+        top: 0;
+        background-position: top center;
+    }
+
+    .nav-menu {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%);
+        text-align: center;
+        width: 100%;
+    }
+
+    .nav-menu ul {
+        display: inline-block;
+        padding: 0;
+        margin: 0 auto;
+    }
+
+    .nav-menu ul li {
+        display: inline-block;
+        margin-left: 15px;
+    }
+
+    footer p {
+        font-size: 0.6em;
+    }
+
+    .social li {
+        float: left;
+        margin-left: 15px;
+    }
+
+    .fourstarball img {
+        width: 300px;
+        height: 300px;
+    }
+
+    #luna {
+        /* float: right; */
+        text-align: center;
+        float: none;
+    }
+}
+
+@media (min-width: 420px) and (max-width: 528px) {
+    .container {
+        width: 96%;
+        margin: 0 auto;
+        padding: 0;
+        font-size: 20px;
+    }
+
+    .circular {
+        display: none;
+    }
+
+    header {
+        position: relative;
+        height: 180px;
+        background: url(../img/logo_db.png) no-repeat;
+        background-size: 16em 6em;
+        top: 0;
+        background-position: top center;
+        padding-bottom: 40px;
+    }
+
+    .nav-menu {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%);
+        text-align: center;
+        width: 100%;
+    }
+
+    .nav-menu ul {
+        display: inline-block;
+        padding: 0;
+        margin: 0 auto;
+    }
+
+    .nav-menu ul li {
+        display: inline-block;
+        margin-left: 15px;
+    }
+
+    footer p {
+        font-size: 0.8em;
+    }
+
+    .social li {
+        float: left;
+        margin-left: 15px;
+    }
+
+    .fourstarball img {
+        width: 450px;
+        height: 450px;
+    }
+}
+
+@media (min-width: 529px) and (max-width: 598px) {
+    .container {
+        width: 96%;
+        margin: 0 auto;
+        padding: 0;
+        font-size: 20px;
+    }
+
+    .circular {
+        display: none;
+    }
+
+    header {
+        position: relative;
+        height: 180px;
+        background: url(../img/logo_db.png) no-repeat;
+        background-size: 18em 6em;
+        top: 0;
+        background-position: top center;
+        padding-bottom: 40px;
+    }
+
+    .nav-menu {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%);
+        text-align: center;
+        width: 100%;
+    }
+
+    .nav-menu ul {
+        display: inline-block;
+        padding: 0;
+        margin: 0 auto;
+    }
+
+    .nav-menu ul li {
+        display: inline-block;
+        margin-left: 15px;
+    }
+
+    footer p {
+        font-size: 0.8em;
+    }
+
+    .social li {
+        float: left;
+        margin-left: 15px;
+    }
+
+    .fourstarball img {
+        width: 450px;
+        height: 450px;
+    }
+}
+
+@media (min-width: 599px) and (max-width: 960px) {
+    .container {
+        width: 96%;
+        margin: 0 auto;
+        padding: 0;
+        font-size: 20px;
+    }
+
+    .circular {
+        display: none;
+    }
+
+    header {
+        position: relative;
+        height: 180px;
+        background: url(../img/logo_db.png) no-repeat;
+        background-size: 25em 7em;
+        top: 0;
+        background-position: top center;
+        padding-bottom: 40px;
+    }
+
+    .nav-menu {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%);
+        text-align: center;
+        width: 100%;
+    }
+
+    .nav-menu ul {
+        display: inline-block;
+        padding: 0;
+        margin: 0 auto;
+    }
+
+    .nav-menu ul li {
+        display: inline-block;
+        margin-left: 15px;
+    }
+
+    footer p {
+        font-size: 0.8em;
+    }
+
+    .social li {
+        float: left;
+        margin-left: 15px;
+    }
+
+    .fourstarball img {
+        width: 450px;
+        height: 450px;
+    }
+}
