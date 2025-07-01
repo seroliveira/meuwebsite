@@ -31,6 +31,11 @@ include("header.php");
                 <td>Ainda muito verde</td>
                 <td></td>
             </tr>
+            <tr>
+                <td>Comédia</td>
+                <td>Escrevo comédia, gravo e faço cenas</td>
+                <td></td>
+            </tr>
         </tbody>
     </table>
 
