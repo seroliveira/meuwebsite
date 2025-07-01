@@ -10,7 +10,7 @@ header {
     position: relative;
     height: 150px;
     background: url(../img/logo_db.png) no-repeat center left;
-    background-size: 34em 8.5em;
+    background-size: 30em 8.5em;
     background-position: calc(0% + 3em) center;
 }
 
@@ -242,6 +242,21 @@ thead th {
 
 .hobbies td:first-child {
     background-color: #c2bfbf;
+}
+
+form {
+    max-width: 400px;
+    margin: 2em auto;
+    padding: 1em;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+label,
+input {
+    display: block;
+    width: 100%;
+    margin-bottom: 1em;
 }
 
 /* outline usado para verificar limites de todos os objectos */

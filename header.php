@@ -18,6 +18,7 @@
                 <li><a href="sobre.php">Sobre</a></li>
                 <li><a href="hobbies.php">Hobbies</a></li>
                 <li><a href="goku.php">Goku</a></li>
+                <li><a href="contato.php">Contato</a></li>
             </ul>
         </nav>
 
