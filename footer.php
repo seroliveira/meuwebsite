@@ -40,6 +40,40 @@
     updateClockAndDate();
 </script>
 
+<script>
+    const ball = document.querySelector('.fourstarball img');
+
+    let rotating = false;
+    let startTime = null;
+    let currentAngle = 0;
+    let animationId;
+    let angleOffset = 0; // guarda o ângulo acumulado ao pausar
+
+    function rotate(timestamp) {
+        if (!startTime) startTime = timestamp;
+
+        const elapsed = timestamp - startTime;
+
+        // Calcula o ângulo total baseado no tempo + o offset anterior
+        currentAngle = (elapsed * 0.09) + angleOffset;
+
+        ball.style.transform = `rotate(${currentAngle}deg)`;
+        animationId = requestAnimationFrame(rotate);
+    }
+
+    ball.addEventListener('click', () => {
+        if (!rotating) {
+            rotating = true;
+            startTime = null; // reinicia o tempo para contar desde o clique
+            animationId = requestAnimationFrame(rotate);
+        } else {
+            rotating = false;
+            cancelAnimationFrame(animationId);
+            angleOffset = currentAngle; // guarda o ângulo atual para continuar depois
+        }
+    });
+</script>
+
 
 </body>
 

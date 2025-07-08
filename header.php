@@ -21,10 +21,12 @@ $currentPage = basename($_SERVER['PHP_SELF']);  // ex: "index.php"
         echo "<li class=\"nav-item\"><a class=\"nav-link $activeClass\" href=\"$page\">$label</a></li>";
     }
     ?>
-    <header>
+    <header class="bg-light">
         <div class="header-content">
             <div class="header-left">
-                <img src="img/4star_logo.png" alt="DragonBall" style="height: 40px;" />
+                <a href="index.php">
+                    <img src="img/4star_logo.png" alt="DragonBall" style="height: 40px;" />
+                </a>
             </div>
 
             <nav class="nav-menu">
