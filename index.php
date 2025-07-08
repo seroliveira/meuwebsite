@@ -5,11 +5,11 @@ include("header.php");
 ?>
 
 <!-- conteúdo do body -->
-<section class="container">
+<main class="container index-main">
     <div class="fourstarball">
         <img src="img/4star.png" alt="">
     </div>
-</section>
+</main>
 
 <!--rodapé-->
 <?php include("footer.php"); ?>

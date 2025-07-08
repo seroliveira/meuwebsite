@@ -2,62 +2,286 @@
 html,
 body {
     width: 100%;
+    height: 100%;
+    margin: 0;
     overflow-x: hidden;
 }
 
-/* header */
-header {
+body {
     display: flex;
     flex-direction: column;
-    /* alinha logo (bg) + menu verticalmente */
-    align-items: left;
-    /* centra horizontalmente */
-    justify-content: space-between;
-    /* espaço entre topo e menu */
+    min-height: 100vh;
+    /* ocupa toda a altura da tela */
+}
+
+main {
+    flex: 1;
+    /* faz o main crescer para preencher o espaço entre header e footer */
+}
+
+
+/* header */
+header {
+    position: relative;
     background: url(../img/logo_db.png) no-repeat center;
     background-size: 38em 10em;
-    min-height: 280px;
-    /* ajusta conforme precisares */
-    padding: 20px 0;
-    /* padding para respiro */
-    position: relative;
+    min-height: 80px;
+    padding: 10px 0;
 }
 
-.circular {
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 100%;
+    margin: 0;
+    padding: 0 20px;
+    height: 100%;
 }
 
-.nav-menu {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    width: 100%;
-    font-size: 20px;
+.header-left img {
+    height: 60px;
+    /* ajuste conforme precisares */
 }
 
 .nav-menu ul {
-    display: inline-block;
-    padding: 0;
+    display: flex;
+    gap: 30px;
+    /* espaçamento entre links */
+    list-style: none;
     margin: 0;
-}
-
-.nav-menu ul li {
-    display: inline-block;
-    margin: 0 10px;
+    padding: 0;
 }
 
 .nav-menu ul li a {
     text-decoration: none;
     color: #000;
 }
+
+.nav-menu ul li a.active {
+  color: rgb(0, 0, 0);        /* vermelho para destacar */
+  font-weight: bold;  /* ou outra formatação */
+  border-bottom: 2px solid rgb(0, 0, 0);  /* se quiser underline */
+}
+
+.header-clock {
+    text-align: right;
+    font-family: Arial, sans-serif;
+}
+
+#clock {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#date {
+    font-size: 14px;
+}
+
+
+/* index */
+main .index-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* altura total da viewport */
+}
+
+.fourstarball {
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.fourstarball img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    margin: 0 auto;
+    
+}
+
+.fourstarball img:hover {
+    animation: rotate-smooth 4s linear infinite;
+}
+
+@keyframes rotate-smooth {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* pagina sobre */
+#luna img {
+    width: 250px;
+    height: 260px;
+}
+
+#luna {
+    float: right;
+    text-align: center;
+}
+
+figure {
+    margin: 10px;
+}
+
+figcaption {
+    text-align: center;
+}
+
+#sobre {
+    margin-bottom: 30px;
+}
+
+h2,
+h3 {
+    border-bottom: 2px solid #333;
+    margin-top: 30px;
+    width: 470px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+/* hobbies */
+table {
+    margin: 20px auto;
+    border: 0.5px solid black;
+    border-spacing: 0.15em;
+    border-collapse: separate;
+}
+
+thead {
+    background-color: #999;
+}
+
+thead th {
+    font-weight: bold;
+    text-align: center;
+    padding: 0.3em 1em;
+}
+
+.piramide {
+    border: 0;
+    border-spacing: 0.05em;
+}
+
+.piramide img {
+    width: 70px;
+    height: 70px;
+}
+
+.hobbies td:first-child {
+    background-color: #c2bfbf;
+}
+
+.carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 16 16'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0'/%3e%3c/svg%3e");
+}
+
+.carousel-control-next-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 16 16'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+
+/* Goku */
+legend {
+    margin: 10px 10px;
+}
+
+.goku {
+    position: relative;
+    text-align: center;
+}
+
+/* esconde os radios */
+.goku input {
+    display: none;
+}
+
+/* labels em linha */
+.goku label {
+    display: inline-block;
+    margin: 5px;
+    padding: 8 12px;
+    cursor: pointer;
+    background-color: #eee;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    transition: 0.2s;
+}
+
+/* estilo ao selecionar label */
+.goku input:checked+label {
+    background-color: #d0e7ff;
+    border-color: #007bff;
+}
+
+/* centrar imagens */
+.goku .imagem {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* esconde todas as imagens por padrão */
+.goku .imagem img {
+    display: none;
+    height: 600px;
+    object-fit: contain;
+    max-width: 300px;
+}
+
+/* mostra apenas a imagem correspondente ao radio selecionado */
+#base:checked~.imagem #img-base,
+#ss:checked~.imagem #img-ss,
+#ss2:checked~.imagem #img-ss2,
+#ss3:checked~.imagem #img-ss3,
+#ss4:checked~.imagem #img-ss4,
+#ssgod:checked~.imagem #img-ssgod,
+#ssgodblue:checked~.imagem #img-ssgodblue,
+#mui:checked~.imagem #img-mui {
+    display: block;
+}
+
+
+/* footer */
+.social {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.social a {
+    flex-shrink: 0;
+    height: 32px;
+    width: 32px;
+    display: block;
+    text-indent: -9999px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.social a[href*="tiktok"] {
+    background-image: url(../img/tiktok.png);
+}
+
+.social a[href*="instagram"] {
+    background-image: url(../img/instagram.png);
+}
+
+.social a[href*="x.com"] {
+    background-image: url(../img/x.png);
+}
+
 
 @media (max-width: 991.98px) {
     .container {
@@ -67,14 +291,9 @@ header {
         font-size: 20px;
     }
 
-    .circular {
-        display: none;
-    }
-
     header {
         position: relative;
         height: 180px;
-        background: url(../img/logo_db.png) no-repeat;
         background-size: 28em 8em;
         top: 0;
         background-position: center;
@@ -111,8 +330,9 @@ header {
     }
 
     .fourstarball img {
-        width: 450px;
-        height: 450px;
+        width: 300px;
+        /* menor que 450px */
+        height: auto;
     }
 }
 
@@ -120,10 +340,6 @@ header {
 
 /* Mobile */
 @media (max-width: 768px) {
-    .circular {
-        display: none;
-    }
-
     header {
         position: relative;
         /* se usar absolute no menu */
@@ -155,46 +371,13 @@ header {
 }
 
 
-
-/* footer */
-.social {
-    display: flex;
-    gap: 25px;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.social a {
-    flex-shrink: 0;
-    height: 32px;
-    width: 32px;
-    display: block;
-    text-indent: -9999px;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.social a[href*="tiktok"] {
-    background-image: url(../img/tiktok.png);
-}
-
-.social a[href*="instagram"] {
-    background-image: url(../img/instagram.png);
-}
-
-.social a[href*="x.com"] {
-    background-image: url(../img/x.png);
-}
-
 @media (max-width: 576px) {
     .social {
         gap: 12px;
     }
-}
 
-/* body contato */
-
-.contato label {
-    display: block;
+    .fourstarball img {
+        width: 200px;
+        height: auto;
+    }
 }

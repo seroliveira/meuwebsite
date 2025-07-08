@@ -5,7 +5,7 @@ include("header.php");
 ?>
 
 <!-- conteúdo do body -->
-<div class="container">
+<main class="container">
     <h2>SonGoku e as suas Transformações</h2>
     <p>Vou incluir todas? Não, mas dá para se entreterem aqui um pouco</p>
     <form action="">
@@ -50,8 +50,7 @@ include("header.php");
             </div>
         </fieldset>
     </form>
-</div>
-
+</main>
 
 <!--rodapé-->
 <?php include("footer.php"); ?>
