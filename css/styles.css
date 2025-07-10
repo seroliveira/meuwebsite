@@ -1,31 +1,52 @@
 /* codigo styles.css */
-html,
-body {
+html {
     width: 100%;
-    height: 100%;
+    min-height: 100%;
     margin: 0;
     overflow-x: hidden;
-    font-size: 18px;
+    font-size: 20px;
+    height: auto; /* ou remova essa regra */
 }
 
 body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    /* ocupa toda a altura da tela */
+    margin: 0;
+    height: auto; /* permite o corpo crescer */
 }
 
 main {
-    flex: 1;
     /* faz o main crescer para preencher o espaço entre header e footer */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.py-2.py-lg-5 {
+  padding-top: 0 !important; /* remove só o padding em cima */
+  /* padding-bottom fica o que já estava */
+}
+
+/* botao voltar ao topo */
+#btnTopo {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 4px;
+  display: none;
+  z-index: 1001;
 }
 
 
 /* header */
 header {
     position: relative;
-    background: url(../img/logo_db.png) no-repeat center;
-    background-size: 38em 10em;
     min-height: 80px;
     padding: 10px 0;
 }
@@ -40,15 +61,26 @@ header {
     height: 100%;
 }
 
+.header-left {
+    flex: 1;
+}
+
 .header-left img {
+    /* ajuste conforme necessidade */
     height: 60px;
-    /* ajuste conforme precisares */
+
+}
+
+.nav-menu {
+    flex: 2;
+    display: flex;
+    justify-content: center;
 }
 
 .nav-menu ul {
     display: flex;
-    gap: 30px;
     /* espaçamento entre links */
+    gap: 30px;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -60,15 +92,16 @@ header {
 }
 
 .nav-menu ul li a.active {
-    color: rgb(0, 0, 0);
     /* vermelho para destacar */
-    font-weight: bold;
+    color: rgb(0, 0, 0);
     /* ou outra formatação */
-    border-bottom: 2px solid rgb(0, 0, 0);
+    font-weight: bold;
     /* se quiser underline */
+    border-bottom: 2px solid rgb(0, 0, 0);
 }
 
 .header-clock {
+    flex: 1;
     text-align: right;
     font-family: Arial, sans-serif;
 }
@@ -82,26 +115,33 @@ header {
     font-size: 14px;
 }
 
+.hamburger {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
 
 /* index */
 main .index-main {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     /* altura total da viewport */
+    height: 100vh;
 }
 
 .fourstarball {
-    margin: 0 auto;
-    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Faz ocupar o espaço disponível */
+    flex: 1;
 }
 
 .fourstarball img {
     max-width: 80%;
     max-height: 80%;
-    display: block;
-    margin: 0 auto;
     cursor: pointer;
 }
 
@@ -145,7 +185,6 @@ h3 {
     margin-top: 30px;
     width: 470px;
     font-weight: bold;
-    font-size: 20px;
 }
 
 
@@ -168,13 +207,29 @@ thead th {
 }
 
 .piramide {
+    width: 100%;
+    max-width: 100%;
     border: 0;
     border-spacing: 0.05em;
+    border-collapse: separate;
+    /* força largura igual entre colunas */
+    table-layout: fixed;
+}
+
+.piramide td {
+    /* 100% / 9 colunas = ~11.11% */
+    width: 11.11%;
 }
 
 .piramide img {
-    width: 70px;
-    height: 70px;
+    /* ocupa toda a célula */
+    width: 100%;
+    /* limite máximo em ecrãs grandes */
+    max-width: 70px;
+    /* mantém proporção */
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
 
 .hobbies td:first-child {
@@ -188,6 +243,25 @@ thead th {
 .carousel-control-next-icon {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 16 16'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
 }
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 40px;               /* largura compacta */
+    height: 40px;              /* ajuste para a altura da sua imagem */
+    top: 50%;                 
+    transform: translateY(-50%);
+    padding: 0;                /* remove padding vertical */
+    background: transparent;   /* só se quiser tirar qualquer bg */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 24px;
+    height: 24px;
+    background-size: 24px 24px;
+}
+
+
 
 
 /* Goku */
@@ -254,7 +328,6 @@ legend {
 /* footer */
 .social {
     display: flex;
-    gap: 25px;
     list-style: none;
     padding: 0;
     margin: 0;
@@ -284,35 +357,40 @@ legend {
 
 
 @media (max-width: 991.98px) {
+
+    h2,
+    h3 {
+        border-bottom: 2px solid #333;
+        margin-top: 30px;
+        width: 400px;
+        font-weight: bold;
+        font-size: 18px;
+    }
+
     .container {
         width: 96%;
         margin: 0 auto;
         padding: 0;
-        font-size: 20px;
+        font-size: 18px;
     }
 
+    /* footer */
     header {
         position: relative;
-        height: 180px;
-        background-size: 28em 8em;
-        top: 0;
-        background-position: center;
-        padding-bottom: 40px;
+        min-height: 80px;
+        padding: 10px 0;
     }
 
     .nav-menu {
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        text-align: center;
-        width: 100%;
+        flex: 2;
+        display: flex;
+        justify-content: center;
     }
 
     .nav-menu ul {
         display: inline-block;
+        margin: 0;
         padding: 0;
-        margin: 0 auto;
     }
 
     .nav-menu ul li {
@@ -320,6 +398,7 @@ legend {
         margin-left: 15px;
     }
 
+    /* footer */
     footer p {
         font-size: 0.8em;
     }
@@ -329,55 +408,211 @@ legend {
         margin-left: 15px;
     }
 
+    /* index */
+    .fourstarball {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* Faz ocupar o espaço disponível */
+        flex: 1;
+    }
+
     .fourstarball img {
-        width: 300px;
-        /* menor que 450px */
-        height: auto;
+        max-width: 80%;
+        max-height: 80%;
+        cursor: pointer;
     }
 }
 
 
-
 /* Mobile */
 @media (max-width: 768px) {
+
+    h2,
+    h3 {
+        border-bottom: 2px solid #333;
+        margin-top: 30px;
+        width: 350px;
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    .header-clock {
+        display: none;
+    }
+
     header {
         position: relative;
-        /* se usar absolute no menu */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        /* se preferires fluxo normal */
-        background-position: center;
-        background-size: 350px auto;
-        /* maior logo */
-        min-height: 280px;
-        /* ajusta conforme o logo */
-        padding: 20px 0;
-        /* remove padding-bottom se usar absolute */
+        min-height: 80px;
+        padding: 10px 0;
     }
 
     .nav-menu {
-        position: absolute;
-        bottom: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-        text-align: center;
+        display: none;
+        position: fixed;
+        top: 80px;
+        right: 0;
+        background: #fff;
+        width: 200px;
+        border: 1px solid #ccc;
+        padding: 10px;
+        z-index: 9999;
+        background-color: #f8f9fa;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        gap: 15px;
     }
 
     .nav-menu ul li {
-        margin: 0 5px;
+        /* Ocupa toda a largura do menu */
+        width: 100%;
+    }
+
+    .nav-menu ul li a {
+        /* Faz o link ocupar toda a largura do <li> */
+        display: block;
+        /* Espaçamento vertical */
+        padding: 10px 0;
+        /* Linha divisória, opcional */
+        border-bottom: 1px solid #ddd;
+    }
+
+    .nav-menu ul li:last-child a {
+        /* Remove borda do último link */
+        border-bottom: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav-menu.active {
+        display: block;
+    }
+
+    .fourstarball {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* Faz ocupar o espaço disponível */
+        flex: 1;
+    }
+
+    .fourstarball img {
+        max-width: 80%;
+        max-height: 80%;
+        cursor: pointer;
     }
 }
 
 
 @media (max-width: 576px) {
-    .social {
-        gap: 12px;
+
+    h2,
+    h3 {
+        border-bottom: 2px solid #333;
+        margin-top: 30px;
+        width: 250px;
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    /* header */
+    .header-clock {
+        display: none;
+    }
+
+    header {
+        position: relative;
+        min-height: 80px;
+        padding: 10px 0;
+    }
+
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        background: #fff;
+        width: 200px;
+        border: 1px solid #ccc;
+        padding: 10px;
+        background-color: #f8f9fa;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-menu ul li {
+        /* Ocupa toda a largura do menu */
+        width: 100%;
+    }
+
+    .nav-menu ul li a {
+        /* Faz o link ocupar toda a largura do <li> */
+        display: block;
+        /* Espaçamento vertical */
+        padding: 10px 0;
+        /* Linha divisória, opcional */
+        border-bottom: 1px solid #ddd;
+    }
+
+    .nav-menu ul li:last-child a {
+        /* Remove borda do último link */
+        border-bottom: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav-menu.active {
+        display: block;
+    }
+
+    /* index */
+    .fourstarball {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* Faz ocupar o espaço disponível */
+        flex: 1;
     }
 
     .fourstarball img {
+        max-width: 80%;
+        max-height: 80%;
+        cursor: pointer;
+    }
+
+    /* sobre */
+    #luna {
+        float: none;
+        /* remove o float */
+        width: 100%;
+        /* ocupa toda a largura */
+        margin: 0 auto 20px;
+        /* centraliza e dá margem abaixo */
+        text-align: center;
+        /* centraliza conteúdo dentro */
+        order: 1;
+        /* ordem dentro do flex container */
+    }
+
+    #luna img {
         width: 200px;
+        /* reduz um pouco a imagem */
         height: auto;
+        /* mantém proporção */
+    }
+
+    /* footer */
+    .social {
+        margin-right: 10px;
+        gap: 0.4rem !important;
     }
 }

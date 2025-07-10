@@ -6,7 +6,7 @@ include("header.php");
 
 <main>
     <!-- Cabeçalho de agradecimento -->
-    <div class="container py-5">
+    <div class="py-2 py-lg-5">
         <div class="p-5 mb-4 bg-light rounded-3">
             <div class="container-fluid py-3">
                 <h1 class="display-5 fw-bold">Obrigado pelo seu contato!</h1>

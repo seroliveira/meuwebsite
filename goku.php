@@ -6,7 +6,7 @@ include("header.php");
 
 <!-- conteúdo do body -->
 <main class="container">
-    <h2>SonGoku e as suas Transformações</h2>
+    <h2>Transformações de SonGoku</h2>
     <p>Vou incluir todas? Não, mas dá para se entreterem aqui um pouco</p>
     <form action="">
         <fieldset class="goku">

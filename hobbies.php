@@ -136,20 +136,8 @@ include("header.php");
         </button>
     </div>
 
-    <!-- Carrega o script do TikTok apenas uma vez -->
-    <script async src="https://www.tiktok.com/embed.js"></script>
 </main>
 
 
 <!--rodapé-->
 <?php include("footer.php"); ?>
-
-<script>
-    const myCarousel = document.querySelector('#tiktokCarousel');
-    const carousel = new bootstrap.Carousel(myCarousel, {
-        interval: false,
-        ride: false,
-        pause: true,
-        wrap: true
-    });
-</script>

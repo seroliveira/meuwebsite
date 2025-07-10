@@ -45,5 +45,11 @@ $currentPage = basename($_SERVER['PHP_SELF']);  // ex: "index.php"
                 <div id="clock"></div>
                 <div id="date"></div>
             </div>
+
+            <div class="hamburger">
+                &#9776;
+            </div>
         </div>
     </header>
+
+    <button id="btnTopo" title="Voltar ao topo">Topo</button>
